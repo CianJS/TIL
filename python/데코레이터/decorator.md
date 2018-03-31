@@ -35,7 +35,7 @@ python에서의 Decorator의 작성법에는 **4가지** 방법이 있습니다.
 
 ## 1. 함수형 데코레이터(데코레이터에 인수 전달 X) ##
 
-'''
+ ``` markdown
 def product_buying(function): # 1
     def wrapper(arg):
         arg = arg-5000
@@ -51,7 +51,7 @@ print money_eating_machine(10000) # 3
 
 -----
 결과 : 거스름 돈 : 5000 # 4
-'''
+```
 
 위의 코드는 'product_buying'라는 데코레이터 함수와 'payment_my_money'라는 main함수(호출할 함수) 2가지의 함수로 이루어져 있습니다.
 #3을 보면 python을 만져본 여러분들이 보신다면 흔히 알고 계시는 함수 호출입니다.
@@ -79,7 +79,7 @@ print money_eating_machine(10000) # 3
 
 ## 2. 함수형 데코레이터(데코레이터에 인수 전달 O) ##
 
-'''
+ ``` markdown
 def product_buying(coffee, bread): # 3
     def marchine(function): # 4
         def wrapper(money, list): # 5
@@ -98,7 +98,6 @@ def product_buying(coffee, bread): # 3
         return wrapper
     return marchine
 
-# 돈 먹는 기계는 돈을 원한다.
 @product_buying(coffee=6000, bread=4500) # 1
 def money_eating_machine(money, select): # 2
     money_you_have = money
@@ -108,7 +107,7 @@ print money_eating_machine(15000, ['커피','빵']) # 7
 
 -----
 결과 : 구매목록 : 커피,빵, 거스름 돈 : 4500
-'''
+```
 
 위 코드는 조금 더 시간을 들여서 자세히 보도록하자
 
