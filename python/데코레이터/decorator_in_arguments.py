@@ -13,7 +13,7 @@
 
 # 주인장이 작성한 소프트웨어에 의해서 값을 차감하여 돌려준다.
 def product_buying(coffee, bread):
-    def marchine(function):
+    def machine(function):
         def wrapper(money, list):
             buy_list = []
             if list:
@@ -28,7 +28,7 @@ def product_buying(coffee, bread):
                 buy_list = None
             return function(money, buy_list)
         return wrapper
-    return marchine
+    return machine
 
 # 돈 먹는 기계는 돈을 원한다.
 @product_buying(coffee=6000, bread=4500)
