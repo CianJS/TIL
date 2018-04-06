@@ -19,9 +19,9 @@ Decorator는 사전에는 ‘장식하는 사람' 또는 ‘장식’으로 나�
 이에 대해서는 다른 사람들과 이야기를 나눠본적이 없어서 잘 모르지만,
 decorator라는 이름이 붙은 저의 생각은
 
-* 화가의 그림(Main 기능)에 조명, 액자 등(추가 기능)을 통해 그 그림을 더욱 돋보이게 한다.
+> 화가의 그림(Main 기능)에 조명, 액자 등(추가 기능)을 통해 그 그림을 더욱 돋보이게 한다.
 
-입니다.
+위와 같습니다.
 
 ***
 
@@ -57,7 +57,7 @@ print money_eating_machine(10000) # 3
 </br>#3을 보면 python을 만져본 여러분들이 보신다면 흔히 알고 계시는 함수 호출입니다.
 </br>여러분들은 지금 돈먹는기계(#2)에 10,000원을 넣었고, 값을 받은 기계는 설치되어있는 로직(#1)에 의해 값을 차감하여 돈을 거슬러 줍니다.
 
-#2-1를 보시면 @product_buying라는 것이 있습니다. 이 부분에서 자세히 설명하고 Decorator 작성법 2번째로 넘어가겠습니다.
+<p/>#2-1를 보시면 @product_buying라는 것이 있습니다. 이 부분에서 자세히 설명하고 Decorator 작성법 2번째로 넘어가겠습니다.
 
 @는 python에서 데코레이터를 뜻하는데, '아래의 함수는 데코레이터 함수에 전달하겠다.' 라는 동작을 실행합니다.
 </br>#2에 있는 함수에는 돈을 넣었지만 넣은 돈의 가격을 계산하는 식은 존재하지 않습니다.
@@ -67,7 +67,7 @@ print money_eating_machine(10000) # 3
 이렇게 된 이유는 'money_eating_machine'라는 함수가 'product_buying'함수의 매개변수로 전달했다는 것이라는 것을 아셔야합니다.
 </br> 그리고 wrapper함수에는 자동으로 여러분이 기계(호출한 함수)에 전달한 돈(매개변수)이 전달되고 그 값을 계산합니다.
 
-#5의 return에서는 'money_eating_machine'함수를 한번 더 호출하는 것처럼 생겼는데, 데코레이터에서는 여기서 여러분이 호출하고 싶은 함수가 호출됩니다.
+<p/>#5의 return에서는 'money_eating_machine'함수를 한번 더 호출하는 것처럼 생겼는데, 데코레이터에서는 여기서 여러분이 호출하고 싶은 함수가 호출됩니다.
 
 그렇다면 #3의 함수 호출은 무엇이냐? #3에서 호출한 것은 바로 #1로 #2의 함수가 넘어가서 #1 함수는 함수를 전달받게 된 것이고,
 </br>#3에서 전달한 값이 wrapper함수에서 인자로 값을 받아서 처리합니다.
@@ -81,7 +81,7 @@ print money_eating_machine(10000) # 3
 
  ``` python
 def product_buying(coffee, bread): # 3
-    def marchine(function): # 4
+    def machine(function): # 4
         def wrapper(money, list): # 5
             buy_list = []
             if list:
@@ -96,7 +96,7 @@ def product_buying(coffee, bread): # 3
                 buy_list = None
             return function(money, buy_list) # 6
         return wrapper
-    return marchine
+    return machine
 
 @product_buying(coffee=6000, bread=4500) # 1
 def money_eating_machine(money, select): # 2
