@@ -131,6 +131,6 @@ print money_eating_machine(15000, ['커피','빵']) # 7
 ** 그렇다면 당신은 제대로 이해하고 있는 중이라는 증거이다. **
 
 그러면.. 이제 Class형태의 데코레이터에 대한 이해를 할 것인데..
-</br>2편에서 계속하도록 하겠습니다.
+</br>[2편](https://github.com/Elgashia/TIL/blob/master/python/Decorator_with_python/Chapter02_Decorator.md) 에서 계속하도록 하겠습니다.
 
 지금 간단하게 난이도에 대해 이야기를 하자면, 함수형의 데코래이터를 이해한 당신들은 더욱 난이도가 쉽다고 느낄것이니 걱정하지말자.
